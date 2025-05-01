@@ -1,0 +1,93 @@
+[
+  {
+    "step": "extraction",
+    "filename": "args.csv",
+    "dependencies": {
+      "params": ["limit"],
+      "steps": []
+    },
+    "options": {
+      "limit": 1000,
+      "workers": 1
+    },
+    "use_llm": true
+  },
+  {
+    "step": "embedding",
+    "filename": "embeddings.pkl",
+    "dependencies": {
+      "params": [],
+      "steps": ["extraction"]
+    }
+  },
+  {
+    "step": "clustering",
+    "filename": "clusters.csv",
+    "dependencies": {
+      "params": ["clusters"],
+      "steps": ["embedding"]
+    },
+    "options": {
+      "clusters": 8
+    }
+  },
+  {
+    "step": "labelling",
+    "filename": "labels.csv",
+    "dependencies": {
+      "params": ["sample_size"],
+      "steps": ["clustering"]
+    },
+    "options": {
+      "sample_size": 30
+    },
+    "use_llm": true
+  },
+  {
+    "step": "takeaways",
+    "filename": "takeaways.csv",
+    "dependencies": {
+      "params": ["sample_size"],
+      "steps": ["clustering"]
+    },
+    "options": {
+      "sample_size": 30
+    },
+    "use_llm": true
+  },
+  {
+    "step": "overview",
+    "filename": "overview.txt",
+    "dependencies": {
+      "params": [],
+      "steps": ["labelling", "takeaways"]
+    },
+    "options": {},
+    "use_llm": true
+  },
+  {
+    "step": "aggregation",
+    "filename": "result.json",
+    "dependencies": {
+      "params": [],
+      "steps": [
+        "extraction",
+        "clustering",
+        "labelling",
+        "takeaways",
+        "overview"
+      ]
+    }
+  },
+  {
+    "step": "visualization",
+    "filename": "report",
+    "dependencies": {
+      "params": ["replacements"],
+      "steps": ["aggregation"]
+    },
+    "options": {
+      "replacements": []
+    }
+  }
+]
