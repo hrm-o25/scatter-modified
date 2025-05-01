@@ -5,10 +5,10 @@ which is licensed under the GNU AGPL v3.0.
 The current repository includes only the modified `scatter` component,  
 adapted and repackaged by Hiromi Ouchi in 2025.
 
----
-
 本リポジトリは、[AIObjectives/talk-to-the-city-reports](https://github.com/AIObjectives/talk-to-the-city-reports) の  
 `scatter` モジュールをベースに、日本語対応向けに改変・再構築したものです。
+
+---
 
 
 # Talk to the City (TttC)
