@@ -1,0 +1,14 @@
+{
+  "name": "name",
+  "question": "question",
+  "input": "example",
+  "model": "gpt-4o-mini",
+  "extraction": {
+    "workers": 3,
+    "limit": 100
+  },
+  "clustering": {
+    "clusters": 5
+  },
+  "intro": "intro"
+}
