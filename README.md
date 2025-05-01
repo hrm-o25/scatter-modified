@@ -1,3 +1,16 @@
+This is a fork of the **scatter** module from the project  
+[AIObjectives/talk-to-the-city-reports](https://github.com/AIObjectives/talk-to-the-city-reports),  
+which is licensed under the GNU AGPL v3.0.
+
+The current repository includes only the modified `scatter` component,  
+adapted and repackaged by Hiromi Ouchi in 2025.
+
+---
+
+本リポジトリは、[AIObjectives/talk-to-the-city-reports](https://github.com/AIObjectives/talk-to-the-city-reports) の  
+`scatter` モジュールをベースに、日本語対応向けに改変・再構築したものです。
+
+
 # Talk to the City (TttC)
 
 <img width="400" alt="image" src="https://github.com/AIObjectives/talk-to-the-city-reports/assets/3934784/57cc6367-0808-40f0-980a-540530ff0866">
