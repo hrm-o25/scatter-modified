@@ -41,8 +41,10 @@ def cluster_embeddings(
     BERTopic = import_module('bertopic').BERTopic
 
     # NEologdの辞書パスを指定
-    neologd_path = '/usr/local/lib/mecab/dic/mecab-ipadic-neologd'
-    mecab = MeCab.Tagger(f"-d {neologd_path} -Ochasen")
+    neologd_path = "/opt/homebrew/lib/mecab/dic/mecab-ipadic-neologd"
+    mecab = MeCab.Tagger(
+    f"-r /opt/homebrew/etc/mecabrc -d {neologd_path} -Ochasen"
+)
 
     # 品詞フィルタリングを行うトークナイザー
     def tokenizer_mecab(text):
